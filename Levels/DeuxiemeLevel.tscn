@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tileset/new_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sprites/Player.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/background-blue.png" type="Texture" id=6]
 [ext_resource path="res://crt_material.tres" type="Material" id=7]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=8]
 
 [node name="Level02" type="Node2D"]
 
@@ -37,7 +38,7 @@ __meta__ = {
 [node name="CRT" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.454902 )
 material = ExtResource( 7 )
-position = Vector2( -7.62939e-06, -78 )
+position = Vector2( -4.54747e-13, -78 )
 scale = Vector2( 50.5709, 18.75 )
 texture = ExtResource( 5 )
 offset = Vector2( 8, 8 )
@@ -61,7 +62,19 @@ script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, -23.3263 )
+rotating = true
 current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 smoothing_speed = 3.0
+script = ExtResource( 8 )
+
+[node name="Shake" type="Label" parent="Player"]
+margin_left = 12.799
+margin_top = -34.0785
+margin_right = 52.799
+margin_bottom = -20.0785
+rect_pivot_offset = Vector2( -95.2082, 47.1823 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
